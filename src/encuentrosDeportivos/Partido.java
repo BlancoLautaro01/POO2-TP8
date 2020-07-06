@@ -6,9 +6,9 @@ import java.util.List;
 public class Partido {
 
 	//Objeto Observado gracias a su variable Deporte.
-	String resultado;
-	List<String> contrincantes = new ArrayList<String>();
-	Deporte deporte;
+	private String resultado;
+	private List<String> contrincantes = new ArrayList<String>();
+	private Deporte deporte;
 	
 	public Partido(String resultado, List<String> contrincantes, Deporte deporte) {
 		super();

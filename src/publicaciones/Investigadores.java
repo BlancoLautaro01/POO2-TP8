@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Investigadores {
 
-	
 	private List<Investigador> investigadores = new ArrayList<Investigador>();
 	
 	public List<Investigador> getInvestigadores(){

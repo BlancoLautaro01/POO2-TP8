@@ -2,7 +2,6 @@ package encuentrosDeportivos;
 
 public class Servidor extends Listener {
 
-	
 	public Servidor(String nombre) {
 		super(nombre);
 	}

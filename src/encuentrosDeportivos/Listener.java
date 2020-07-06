@@ -2,10 +2,18 @@ package encuentrosDeportivos;
 
 public abstract class Listener {
 	
-	String nombre;
+	private String nombre;
 	
 	public Listener(String nombre) {
 		super();
+		this.setNombre(nombre);
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	

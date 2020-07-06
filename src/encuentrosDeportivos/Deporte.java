@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class Deporte {
 
 	//En esta clase es la "Observada" en cierta forma ya qe es la que conoce los listeners, pero aun asi la observada es Partido.
-	List<Listener> listeners = new ArrayList<Listener>();
+	private List<Listener> listeners = new ArrayList<Listener>();
 	
 	public void agregarListener(Listener listener) {
 		//attach
