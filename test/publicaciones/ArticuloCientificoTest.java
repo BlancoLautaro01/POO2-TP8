@@ -2,7 +2,6 @@ package publicaciones;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.Mockito.*;
@@ -22,9 +21,12 @@ public class ArticuloCientificoTest {
 	Investigador investigador1;
 	Investigador investigador2;
 	
-	@Before
-	public void setUp() throws Exception {
+	@Test
+	public void testConstructor() {
+		//Este test toma 2 investigadores, uno sin intereses y otro con "mockito", y se fija si al correr el constructor 
+		//de ArticuloCientifico este recibe la notificacion.
 		
+		//Setup
 		autores = new ArrayList<String>();
 		palabrasClave = new ArrayList<String>();
 		filiaciones = new ArrayList<String>();
@@ -32,20 +34,13 @@ public class ArticuloCientificoTest {
 		intereses2 = new ArrayList<String>();
 		
 		investigadores = new Investigadores();
-		
-		//Como los estoy haciendo con mock y no usando su constructor, tengo que agregarlos manualmente a Investigadores.
 		investigador1 = mock(Investigador.class);
-		investigadores.addInvestigador(investigador1);
-		
 		investigador2 = mock(Investigador.class);
-		investigadores.addInvestigador(investigador2);
 		
-	}
-	
-	@Test
-	public void testConstructor() {
-		//Este test toma 2 investigadores, uno sin intereses y otro con "mockito", y se fija si al correr el constructor 
-		//de ArticuloCientifico este recibe la notificacion.
+		//Exercise
+		//Como los estoy haciendo con mock y no usando su constructor, tengo que agregarlos manualmente a Investigadores.
+		investigadores.addInvestigador(investigador1);
+		investigadores.addInvestigador(investigador2);
 		
 		intereses1.add("mockito");
 		filiaciones.add("mockito");
@@ -54,6 +49,7 @@ public class ArticuloCientificoTest {
 	
 		ArticuloCientifico articulo = new ArticuloCientifico("", "", "", autores, palabrasClave, filiaciones, investigadores);
 		
+		//Verify
 		assertEquals(articulo.getFiliaciones(), filiaciones);
 		verify(investigador1, times(1)).recibirMensaje(articulo);
 		verify(investigador2, times(0)).recibirMensaje(articulo);

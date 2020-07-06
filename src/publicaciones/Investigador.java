@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Investigador {
 
+	//Objeto observador
 	private List<String> intereses;
 	
 	public Investigador(List<String> intereses){
@@ -14,6 +15,7 @@ public class Investigador {
 	
 	public void recibirMensaje(ArticuloCientifico articulo) {
 		//Accion a ejecutar cuando recive aviso.
+		//Metodo Update/Notify
 	}
 
 	public List<String> getIntereses() {

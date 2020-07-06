@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class ArticuloCientifico {
 
+	//Este es el objeto observado
 	private String titulo, tipo, lugarCreacion;
 	private List<String> autores, palabrasClave, filiaciones;
 	
@@ -67,13 +68,16 @@ public class ArticuloCientifico {
 	
 	//Implementacion
 	private void notificar(Investigadores investigadores) {
+		//En una forma no combencional, este es el metodo atach/detach ya que elije a quien notifica y a quien no
+		
 		for(Investigador investigador: investigadores.getInvestigadores()) {
 			this.notificarSi(investigador);
 		}
 	}
 	
 	private void notificarSi(Investigador investigador) {
-		
+
+		//Dado un investigador, me fijo si tengo que notificarlo o no respecto de las palabras clave de ambos.
 		List<String> palabrasClave = new ArrayList<String>(this.getPalabrasClave());
 		String palabraClaveActual = palabrasClave.remove(0);
 		boolean fueNotificado = false;
